@@ -4,8 +4,8 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class AdminModel extends Model
+class UsersModel extends Model
 {
-    protected $table = "admin";
+    protected $table = "users";
     protected $allowedFields = ["*"];
 }

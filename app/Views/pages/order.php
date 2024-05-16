@@ -43,7 +43,7 @@
 </div>
 
 <div class="container-sm">
-    <form action="/orderaction" method="post">
+    <form action="/order?idcar=<?= $car["id"] ?>" method="post">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nama Peminjam</label>
             <input type="text" class="form-control" name="namap" required>
@@ -58,14 +58,12 @@
         </div>
         <div class="mb-3">
             <select class="form-select" aria-label="Default select example" name="approver" required>
-                <option selected>Pilih Approver</option>
-                <option value="1">Manager1</option>
-                <option value="2">Manager2</option>
+                <option value="" selected disabled>Pilih Approver</option>
+                <?php foreach ($approvers as $approver) : ?>
+                    <option value="<?= $approver["id"] ?>"><?= $approver["username"] ?></option>
+                <?php endforeach ?>
             </select>
         </div>
-
-
-
         <button type="submit" class="btn btn-primary">Ajukan</button>
         <a href="/car?type=truck" class="btn btn-danger">Batal</a>
 

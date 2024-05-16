@@ -16,14 +16,21 @@
             <div class="container-fluid">
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="/car?type=truck">Mobil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Aktivitas</a>
-                        </li>
+                        <?php
 
+                        if (session()->get("role") === "approver") { ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Kotak Masuk</a>
+                            </li>
 
+                        <?php } else { ?>
+                            <li class="nav-item">
+                                <a class="nav-link " aria-current="page" href="/car?type=truck">Mobil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/activity">Aktivitas</a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
