@@ -26,8 +26,8 @@
                     <div class="d-flex justify-content-between">
                         <p class="fw-medium">by <?= $order->username ?></p>
                         <div class="buttongrp">
-                            <a href="/approveok?id=<?= $order->id ?>" class="btn btn-outline-success">Approve</a>
-                            <a href="/rejected?id=<?= $order->id ?>" class="btn btn-outline-danger">Reject</a>
+                            <a href="/approveok?orderid=<?= $order->id ?>&carid=<?= $order->car_id ?>" class="btn btn-outline-success">Approve</a>
+                            <a href="/rejected?orderid=<?= $order->id ?>&carid=<?= $order->car_id ?>" class="btn btn-outline-danger">Reject</a>
 
                         </div>
                     </div>

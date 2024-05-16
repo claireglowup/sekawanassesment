@@ -47,11 +47,20 @@
                     <div class="d-flex justify-content-between">
                         <p class="fw-medium"><?= $order->username ?></p>
                         <?php if ($order->approved === "Approved") { ?>
-                            <span class="btn btn-outline-success">Approved</span>
+                            <div class="d-flex gap-2">
+                                <span class="btn btn-outline-success">Approved</span>
+                                <?php if ($order->car_status == 1) { ?>
+                                    <a href="/car/return?carid=<?= $order->car_id ?>&orderid=<?= $order->id ?>" class="btn btn-success">Kembalikan Mobil</a>
+                                <?php } else if ($order->car_status == 2) { ?>
+                                    <span class="btn btn-primary">Mobil Sudah Dikembalikan</span>
+                                <?php } ?>
+
+                            </div>
                         <?php } else if ($order->approved === "Rejected") { ?>
                             <span class="btn btn-outline-danger">Rejected</span>
                         <?php } ?>
                     </div>
+
                 </li>
         <?php }
         endforeach ?>

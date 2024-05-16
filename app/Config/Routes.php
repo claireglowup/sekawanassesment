@@ -6,17 +6,20 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
-$routes->get('/car', 'Home::car');
-$routes->get('/order', 'Home::order');
-$routes->get('/activity', 'Home::activity');
-$routes->get('/inbox', 'Home::inbox');
 
 
-$routes->post('/order', 'Home::orderAction');
-
+//auth
 $routes->get('/logout', "Auth::logout");
 $routes->post('/login', 'Auth::login');
 
+//admin
+$routes->get('/car', 'Admin::car');
+$routes->get('/car/return', 'Admin::carReturn');
+$routes->get('/order', 'Admin::order');
+$routes->post('/order', 'Admin::orderAction');
+$routes->get('/activity', 'Admin::activity');
 
-$routes->get('/approveok', 'Home::approveOk');
-$routes->get('/rejected', 'Home::rejected');
+//approver
+$routes->get('/approveok', 'Approver::approveOk');
+$routes->get('/rejected', 'Approver::rejected');
+$routes->get('/inbox', 'Approver::inbox');

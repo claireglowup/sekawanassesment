@@ -22,6 +22,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/inbox">Kotak Masuk</a>
                             </li>
+                            <li class="nav-item">
+                                <a class=" btn btn-danger" href="/logout">Logout</a>
+                            </li>
 
                         <?php } else { ?>
                             <li class="nav-item">
@@ -30,6 +33,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/activity">Aktivitas</a>
                             </li>
+                            <?php if (session()->get("isLoggedIn")) { ?>
+                                <li class="nav-item">
+                                    <a class=" btn btn-danger" href="/logout">Logout</a>
+                                </li>
+                            <?php } ?>
                         <?php } ?>
                     </ul>
                 </div>

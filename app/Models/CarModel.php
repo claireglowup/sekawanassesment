@@ -7,5 +7,5 @@ use CodeIgniter\Model;
 class CarModel extends Model
 {
     protected $table = "car";
-    protected $allowedFields = ["*"];
+    protected $allowedFields = ["available", "kilometer"];
 }

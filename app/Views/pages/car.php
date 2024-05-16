@@ -28,8 +28,17 @@
                     <div class="card-body">
                         <h5 class="card-title"><?= $car['name'] ?></h5>
                         <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, impedit?</p>
-                        <a href="/order?id=<?= $car['id'] ?>" class="btn btn-primary">Ajukan</a>
-                        <span class="btn btn-outline-success">Tersedia</span>
+                        <?php if ($car['available'] == 1) { ?>
+                            <div class="d-flex justify-content-between">
+                                <a href="/order?id=<?= $car['id'] ?>" class="btn btn-primary">Ajukan</a>
+                                <span class="btn btn-outline-success">Tersedia</span>
+                            </div>
+
+                        <?php } else if ($car['available'] == 2) { ?>
+                            <span class="btn btn-outline-secondary">Digunakan</span>
+                        <?php } else if ($car['available'] == 3) { ?>
+                            <span class="btn btn-outline-secondary">Dalam Antrian</span>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
