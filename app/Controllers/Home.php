@@ -45,6 +45,25 @@ class Home extends BaseController
         }
     }
 
+
+    public function inbox()
+    {
+        if (session()->get("isLoggedIn")) {
+
+            $id = session()->get("userId");
+            $result = $this->orderModel->getOrderForApprover($id);
+
+            $data = [
+                "title" => "Kotak Masuk",
+                "orders" => $result,
+            ];
+
+            return view("pages/kotakmasuk", $data);
+        } else {
+            return redirect()->to("/");
+        }
+    }
+
     public function car()
     {
         if (session()->get("isLoggedIn")) {

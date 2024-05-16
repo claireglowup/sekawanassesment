@@ -9,6 +9,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/car', 'Home::car');
 $routes->get('/order', 'Home::order');
 $routes->get('/activity', 'Home::activity');
+$routes->get('/inbox', 'Home::inbox');
 
 
 $routes->post('/order', 'Home::orderAction');

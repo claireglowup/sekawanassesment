@@ -22,4 +22,18 @@ class OrderModel extends Model
             log_message('error', $e->getMessage());
         }
     }
+
+    public function getOrderForApprover($id)
+    {
+        try {
+            $query = "SELECT car.name, order.nama_pegawai, order.jabatan_pegawai, order.estimasi_jarak,order.approved,order.time
+                      FROM `order`
+                      JOIN car on car.id = order.car_id
+                      WHERE order.approver_id = ?";
+
+            return $this->db->query($query, [$id])->getResult();
+        } catch (\Exception $e) {
+            log_message('error', $e->getMessage());
+        }
+    }
 }

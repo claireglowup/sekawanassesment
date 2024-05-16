@@ -20,7 +20,7 @@
 
                         if (session()->get("role") === "approver") { ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Kotak Masuk</a>
+                                <a class="nav-link" href="/inbox">Kotak Masuk</a>
                             </li>
 
                         <?php } else { ?>
