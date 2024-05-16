@@ -16,3 +16,7 @@ $routes->post('/order', 'Home::orderAction');
 
 $routes->get('/logout', "Auth::logout");
 $routes->post('/login', 'Auth::login');
+
+
+$routes->get('/approveok', 'Home::approveOk');
+$routes->get('/rejected', 'Home::rejected');

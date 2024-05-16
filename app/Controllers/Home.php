@@ -52,7 +52,6 @@ class Home extends BaseController
 
             $id = session()->get("userId");
             $result = $this->orderModel->getOrderForApprover($id);
-
             $data = [
                 "title" => "Kotak Masuk",
                 "orders" => $result,
@@ -129,6 +128,42 @@ class Home extends BaseController
             $this->orderModel->insert($data);
 
             return redirect()->to('/');
+        } catch (\Exception $e) {
+            echo "Terjadi kesalahan: " . $e->getMessage();
+        }
+    }
+
+    public function approveOk()
+    {
+        try {
+            $orderId = $this->request->getVar("id");
+
+            $data = [
+                "approved" => 'Approved',
+                "action" => 1
+            ];
+
+            $this->orderModel->update($orderId, $data);
+
+            return redirect()->to("/inbox");
+        } catch (\Exception $e) {
+            echo "Terjadi kesalahan: " . $e->getMessage();
+        }
+    }
+
+    public function rejected()
+    {
+        try {
+            $orderId = $this->request->getVar("id");
+
+            $data = [
+                "approved" => 'Rejected',
+                "action" => 1
+            ];
+
+            $this->orderModel->update($orderId, $data);
+
+            return redirect()->to("/inbox");
         } catch (\Exception $e) {
             echo "Terjadi kesalahan: " . $e->getMessage();
         }

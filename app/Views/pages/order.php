@@ -20,21 +20,7 @@
                         <p>Anjuran service</p>
                         <p> <?= $car['service_km'] ?>km/service</p>
                     </div>
-                    <div class=" d-flex justify-content-between">
-                        <?php switch ($car['available']) {
-                            case 1:
-                                echo '<span class="btn btn-outline-success">Tersedia</span>';
-                                break;
-                            case 2:
-                                echo '<span class="btn btn-outline-warning">Service</span>';
-                                break;
-                            case 3:
-                                echo '<span class="btn btn-outline-">Dipakai</span>';
-                                break;
-                        }
-                        ?>
 
-                    </div>
                 </div>
             </div>
         </div>

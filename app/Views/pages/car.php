@@ -18,47 +18,25 @@
         </div>
     </nav>
 </div>
-<?php
-if ($type === "truck") {
-?>
-    <div class="container mt-4 truck-car">
-        <div class="row">
-            <?php foreach ($cars as $car) : ?>
-                <div class="col-md-4 mb-4">
-                    <div class="card" style="width: 100%;">
-                        <img src="<?= $car['img'] ?>" class="card-img-top" alt="truck">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $car['name'] ?></h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, impedit?</p>
-                            <a href="/order?id=<?= $car['id'] ?>" class="btn btn-primary">Ajukan</a>
 
-                        </div>
+<div class="container mt-4 truck-car">
+    <div class="row">
+        <?php foreach ($cars as $car) : ?>
+            <div class="col-md-4 mb-4">
+                <div class="card" style="width: 100%;">
+                    <img src="<?= $car['img'] ?>" class="card-img-top" alt="truck">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $car['name'] ?></h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, impedit?</p>
+                        <a href="/order?id=<?= $car['id'] ?>" class="btn btn-primary">Ajukan</a>
+                        <span class="btn btn-outline-success">Tersedia</span>
                     </div>
                 </div>
-
-            <?php endforeach; ?>
-        </div>
+            </div>
+        <?php endforeach; ?>
     </div>
-<?php } else if ($type === "general") { ?>
-    <div class="container mt-4 general-car">
-        <div class="row">
-            <?php foreach ($cars as $car) : ?>
-                <div class="col-md-4 mb-4">
-                    <div class="card" style="width: 100%;">
-                        <img src="<?= $car['img'] ?>" class="card-img-top" alt="truck">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $car['name'] ?></h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, impedit?</p>
-                            <a href="/order?id=<?= $car['id'] ?>" class="btn btn-primary">Ajukan</a>
+</div>
 
-                        </div>
-                    </div>
-                </div>
-
-            <?php endforeach; ?>
-        </div>
-    </div>
-<?php } ?>
 
 
 
