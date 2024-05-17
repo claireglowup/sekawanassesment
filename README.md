@@ -27,6 +27,8 @@ password : approver2
 
 Run test.sql yang ada di bagian root project di mySQL anda
 
+Ubah file .env_example menjadi .env
+
 ```bash
 # clone this repo
 git clone https://github.com/claireglowup/sekawanassesment.git
