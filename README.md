@@ -25,7 +25,7 @@ password : approver2
 
 ## Cara Menjalankan aplikasi
 
-Pastikan sudah menjalan test.sql yang ada di bagian root project di mySQL anda
+Run test.sql yang ada di bagian root project di mySQL anda
 
 ```bash
 # clone this repo
